@@ -1,0 +1,21 @@
+<?php 
+	return [
+		'db'=>[
+			'db'=>'mysql',
+			'host'=>'localhost',
+			'port'=>3306,
+			'dbname'=>'db_tt',
+			'passwd'=>'',
+			'user'=>'root',
+			'charset'=>'utf8'
+		],
+		'home'=>[
+			'default_controller'=>'admin',
+			'default_action'=>'listAll'
+		],
+		'admin'=>[
+			'default_controller'=>'',
+			'default_action'=>''
+		]
+	];
+ ?>

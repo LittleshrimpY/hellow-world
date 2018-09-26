@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="./public/css/admin.css">
+</head>
+<body id="body">
+<center>
+ <div id="box">
+	<h1>留言板后台</h1>
+	<div id="loginbox">
+		<form action="index.php?s=admin/add" method="post" onsubmit="return checkPassword()&&fankong()">
+			用户名: <input type="text" id="pn" style="border: 1px solid #ccc" name="username" onblur="loadAjax()" class="input"></input>
+			密码: <input type="password" id="pa" name="password" class="input"></input>
+			确认密码: <input type="password" id="pt" name="password" class="input"></input>
+			<input type="reset" value="重置" class="button"></input><input type="submit" value="注册" class="button"></input>
+		</form>
+	</div>
+ </div>
+ <a href="?s=<?=USER?>/loginAction">回到登录页面</a>
+ </center>
+<script type="text/javascript">
+	var check=true;
+	function fankong(){
+		return check;
+	}
+	function checkPassword(){
+		var pa = document.getElementById("pa").value;
+		var pt = document.getElementById("pt").value;
+		var pn = document.getElementById("pn").value;
+		if (pn==""||pt==""||pn=="") {
+			alert("必须全填!");
+			return false;
+		}
+		if (pa==pt) {
+			return true;
+		}else{
+			alert("两次密码不相同！");
+			return false;
+		}
+	}
+	function loadAjax(){
+		var pn = document.getElementById("pn");
+		if (pn=="") {
+			pn.style.border="1px solid red";
+			return;
+		}
+		var ajax;
+		if (window.XMLHttpRequest) {
+			ajax = new XMLHttpRequest();
+		}else{
+			ajax = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		ajax.onreadystatechange=function() {
+			if (ajax.readyState==4 && ajax.status==200) {
+				if (ajax.responseText=="true") {
+					alert("用户已存在");
+					check=false;
+					return;
+				}else{
+					check=true;
+				}
+			}
+		}
+		ajax.open("POST","?s=admin/checkUser",true);
+        ajax.setRequestHeader("Content-type","application/x-www-form-urlencoded"); 
+		// ajax.open("GET","application/admin/model/checkUserAdd.php?username="+pn,true);
+		ajax.send("username="+pn.value);
+	}
+</script>
+</body>
+</html>

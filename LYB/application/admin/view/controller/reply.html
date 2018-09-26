@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>	</title>
+</head>
+<body>
+<center>
+		<table border="1" style="text-align: center;">
+			<form action="index.php?s=admin/reply" method="post">
+			<?php foreach($data as $row) {?>
+				<tr>
+				<td>ID:</td>
+					<td>
+						<input type="text" readonly="readonly" name="reid" value="<?php echo $row[$file[0]]?>"></input><input type="hidden" name="id" value="<?php echo $row[$file[0]]?>"></input>
+					</td>
+				</tr>
+				<tr>
+				<td>时间:</td>
+					<td>
+						<input type="text" name="date" value="<?php echo $row[$file[1]]?>"></input>
+					</td>
+				</tr>
+				<tr>
+				<td>发布者:</td>
+					<td>
+						<input type="text" name="poster" value="<?php echo $row[$file[2]]?>"></input>
+					</td>
+				</tr>
+				<tr>
+				<td>留言:</td>
+					<td>
+						<input type="text" name="comment" value="<?php echo $row[$file[3]]?>"></input>
+					</td>
+				</tr>
+				<tr>
+				<td>回复:</td>
+					<td>
+						<input type="text" id="change" name="reply" onchange="changea()" value="<?php echo $row[$file[4]]?>"></input>
+					</td>
+				</tr>
+				<tr>
+				<td>邮箱:</td>
+					<td>
+						<input type="text" name="mail" value="<?php echo $row[$file[5]]?>"></input>
+					</td>
+				</tr>
+				<tr>
+				<td>地址:</td>
+					<td>
+						<input type="text" name="ip" value="<?php echo $row[$file[6]]?>"></input>
+					</td>
+				</tr>
+					<td>
+						<input type="submit" value="提交"></input>
+					</td>
+				</tr>
+			<?php }?>
+			</form>
+		</table>
+</center>
+<?php require_once('framework/mune.html')?>
+</body>
+<script type="text/javascript">
+	var changes;
+	var value;
+	window.onload=function(){
+		changes = document.getElementById('change');
+		value = changes.value;
+	}
+	function changea(){
+		if (changes.value!=value) {
+			changes.value =changes.value+'(已修改)';
+		}
+	}
+</script>
+</html>

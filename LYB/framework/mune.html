@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<center>
+		<?php
+			if(empty($_GET['page'])){
+				$page = 1;
+			}else{
+				$page = $_GET['page'];
+			}
+		?>
+		<p>欢迎来到我的数据库管理中心</p>
+		<a href="?s=<?=USER?>/listAll&page=<?=$page?>">回到主页面</a>
+</center>
+</body>
+</html>

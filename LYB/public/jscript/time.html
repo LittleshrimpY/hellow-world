@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta content-type="text/html" charset="utf-8">
+	<script type="text/javascript">
+		var Y,M,D,h,m,s,time,now,snow;
+		function loadAjax(){
+			var ajax = new XMLHttpRequest();
+			ajax.onreadystatechange=function(){
+				if (ajax.readyState==4&&ajax.status==200) {
+					getClientTime();
+					snow=new Date(ajax.responseText);
+					console.log(time-snow);
+					if (time-snow>2000||time-snow<-2000) {
+						document.getElementById("1").innerHTML="请修改本机时间";
+						return;
+					}
+					document.getElementById("1").innerHTML=ajax.responseText;
+				}
+			}
+			ajax.open("get","http://192.168.119.22/time.php",true);
+			ajax.send();
+			setTimeout(loadAjax,1000);
+		}
+		function getClientTime(){
+			now = new Date;
+			time = now.getTime();
+		}
+		window.onload=function() {
+			loadAjax();
+		}
+	</script>
+</head>
+<body>
+	<center>
+	<button onclick="loadAjax()">点击显示时间</button>
+	<p id="1"></p>
+	</center>
+</body>
+</html>

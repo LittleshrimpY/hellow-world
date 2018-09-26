@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		function go_url(){
+			var time = document.getElementById('q').innerHTML;
+			time--;
+			document.getElementById('q').innerHTML=time;
+			if (time==1){
+				window.location.href="<?=$url?>";
+			}
+			window.setTimeout(go_url,1000);
+		}
+		window.onload = function(){
+			go_url();
+		}
+	</script>
+</head>
+<body>
+<center>
+	<p style="color: red;font-size: 30px">
+	^_^ <?=$message?>....返回时间
+	<span id='q'><?=$time?></span>
+	<a href="<?=$url?>">返回</a>
+	</p>
+</center>
+</body>
+</html>

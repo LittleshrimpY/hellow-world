@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>	</title>
+</head>
+<body>
+<center>
+		<table border="1" style="text-align: center;">
+			<form action="index.php?s=student/student/reSet" method="post">
+			<?php foreach($data as $row) {?>
+				<tr>
+				<td>ID:</td>
+					<td>
+						<input type="text" readonly="readonly" name="reid" value="<?php echo $row[$file[0]]?>"></input><input type="hidden" name="id" value="<?php echo $row[$file[0]]?>"></input>
+					</td>
+				</tr>
+				<tr>
+				<td>姓名:</td>
+					<td>
+						<input type="text" name="xm" value="<?php echo $row[$file[1]]?>"></input>
+					</td>
+				</tr>
+				<tr>
+				<td>年龄:</td>
+					<td>
+						<input type="text" name="nl" value="<?php echo $row[$file[2]]?>"></input>
+					</td>
+				</tr>
+				<tr>
+				<td>班级:</td>
+					<td>
+						<input type="text" name="bj" value="<?php echo $row[$file[3]]?>"></input>
+					</td>
+				</tr>
+					<td>
+						<input type="submit" value="提交"></input>
+					</td>
+				</tr>
+			<?php }?>
+			</form>
+		</table>
+</center>
+<?php require_once('framework/mune.html')?>
+</body>
+</html>

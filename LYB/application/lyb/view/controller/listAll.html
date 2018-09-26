@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>留言板</title>
+	<link rel="stylesheet" type="text/css" href="./public/css/home.css">
+	<script type="text/javascript" src="./public/jscript/home.js"></script>
+</head>
+<body id="body" style="overflow:auto;">
+<div id="dlboxCover" style="display:none;position:absolute;z-index:1000;width: 100%;height: 100%;opacity: 0.3;background-color:#333;"></div>
+<div id="postboxCover" style="display:none;position:absolute;z-index:1000;width: 100%;height: 100%;opacity: 0.3;background-color:#333;"></div>
+	<div id="box">
+		<h1>留言板</h1>
+		<button id="login" style="cursor:pointer;">进入管理</button>
+		<button id="fbly">发表留言</button>
+		<div id="postbox" style="display: none;position: absolute;z-index: 1000;width: 50%;left: 25%;box-shadow:0 0 10px #333;" class="postbox">
+				<ul class="userbox">
+					<li>名称：</li>
+					<li class="user_name"><input id="user" type="text" name="poster"></input></li>
+					<li>邮箱：</li>
+					<li class="user_email"><input id="email" type="email" name="email"></input></li>
+					<li class="user_post"><input id="postly" type="button" class="post_button" value="发布"></input></li>
+				</ul>
+				<textarea id="ly" style="resize: none;overflow:hidden;height: 150px;" name="ly" placeholder="在此处留言"></textarea>
+		</div>
+		<div style="box-shadow:0 0 10px #333;display: none; background-color: #fff;position: absolute;z-index: 1000;width: 30%;height:150px;top:20%;left: 34%;" id="dlbox">
+			<ul style="text-align: center;margin-top: 30px;">
+			<li>账户:<input  type="text" id="username" ></input></li>
+			<br/>
+			<li>密码:<input  type="password" id="password" ></input></li>
+			<br/>
+			<li><input type="reset" value="重置" class="button"></input>&nbsp;&nbsp;<input id="dl" type="submit" value="登录" class="button"></input>&nbsp;&nbsp;<a href="index.php?s=admin/add">注册</a></li>
+			</ul>
+		</div>
+		<div id="comment_info" class="comment_info">
+		</div>
+		<ul id="comments" class="comments">
+			<li style="font-size: 28px;text-align: center;">
+				页面跳转中。。。。
+			</li>
+		</ul>
+		<div id="comments_footer" class="comments_footer">
+		</div>
+	</div>
+</body>
+</html>
