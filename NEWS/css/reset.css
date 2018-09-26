@@ -1,0 +1,35 @@
+/*全局样式*/
+/* 统一字体和大小 */
+body{
+	font-size:12px;
+	font-family:宋体,arial;
+}
+/* 清除块元素空隙 */
+html,body,div,p,h1,h2,h3,h4,h5,h6,ul,li,ol,dl,dt,dd,table,tr,td,th,input,form,select,textarea{
+	margin:0;
+	padding:0;
+}
+/*统一超链接样式*/
+a{
+	color:#333;
+	text-decoration:none;
+}
+a:hover{
+	color:#900;
+	text-decoration:underline;
+}
+/*去掉项目符号*/
+ul,ol,li{
+	list-style:none;
+}
+/*万能清除*/
+.clearfix{
+  zoom:1;
+         }
+.clearfix:after{
+	content:".";
+	clear:both;
+	display:block;
+	height:0;
+	visibility:hidden;
+}

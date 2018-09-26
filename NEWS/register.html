@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/register.css">
+</head>
+<body>
+    <form action ="doregister.php" method="post" enctype="multipart/form-data">
+	<div class="page-wrap">
+            <div class="w">
+                <div class="user-con">
+                    <div class="user-title">用户注册</div>
+                    <div class="user-box">
+                        <div class="error-item">
+                            <i class="fa fa-minus-circle error-icon"></i>
+                            <p class="err-msg">Error</p>
+                        </div>
+                        <div class="user-item">
+                            <label class="user-label" for="username">
+                                <i class="fa fa-user"></i>
+                            </label>
+                            <input type="text" class="user-content" id="username" placeholder="请输入用户名" autocomplete="off" name="username">
+                        </div>
+                        <div class="user-item">
+                            <label class="user-label" for="password">
+                                <i class="fa fa-lock"></i>
+                            </label>
+                            <input type="password" class="user-content" id="password" placeholder="请输入密码" autocomplete="off" name="password">
+                        </div>
+                        <div class="user-item">
+                            <label class="user-label" for="password-confirm">
+                                <i class="fa fa-lock"></i>
+                            </label>
+                            <input type="password" class="user-content" id="password-confirm" placeholder="请再次输入密码" autocomplete="off" name="password2">
+                        </div>
+                        <div class="user-item">
+                            <label class="user-label" for="phone">
+                                <i class="fa fa-home"></i>
+                            </label>
+                            <input type="file" class="user-content" id="phone" placeholder="请输入头像" autocomplete="off" name="user_thumb">
+                        </div>
+                        <div class="user-item">
+                            <label class="user-label" for="phone">
+                                <i class="fa fa-phone"></i>
+                            </label>
+                            <input class="user-content" id="phone" placeholder="请输入手机号" autocomplete="off" name="phone">
+                        </div>
+                        <div class="user-item">
+                            <label class="user-label" for="email">
+                                <i class="fa fa-envelope"></i>
+                            </label>
+                            <input class="user-content" id="email" placeholder="请输入邮箱" autocomplete="off" name="email">
+                        </div>
+                        <input type="submit" class="btn btn-submit" id="submit"/>
+                        <div class="link-item">
+                            <a class="link" href="login.php">已有帐号，去登录>></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </form>
+</body>
+</html>
